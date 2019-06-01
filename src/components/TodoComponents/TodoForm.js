@@ -7,5 +7,7 @@ const Form = (props) => {
 }
 
 class TodoForm extends React.component {
-
+  
 }
+
+export default TodoForm;
