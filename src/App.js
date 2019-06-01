@@ -1,6 +1,9 @@
 import React from 'react';
 import "./TodoComponents/Todo.css";
 
+import TodoList from "./TodoComponents/TodoList.js";
+import TodoForm from "./TodoComponents/TodoForm.js";
+
 
 class App extends React.Component {
   // you will need a place to store your state in this component.
@@ -38,16 +41,32 @@ class App extends React.Component {
     const filtered = this.state.todos.filter(item => {
       return item.purchased === false;
     });
-    
+
     this.setState({ todos: filtered })
   }
 
   render() {
-    return (
-      <div>
-        <h2>Welcome to your Todo App!</h2>
-      </div>
-    );
+
+    if(this.state.todos.length < 1) {
+      return (
+        <div className="App">
+          <div className="header">
+            <h1>ToDo List: MVP</h1>
+            <TodoList
+              todos={this.state.todos}
+              toggleItem={this.toggleItem}
+            />
+            <TodoForm addItem={this.addItem} />
+          </div>
+          <div>
+            <button onClick={this.clearComplete} className="clear-btn">
+              Clear Completed
+            </button>
+          </div>
+        </div>
+      );
+    }
+
   }
 }
 
