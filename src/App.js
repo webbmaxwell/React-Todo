@@ -1,8 +1,8 @@
 import React from 'react';
-import "./TodoComponents/Todo.css";
+import "./components/TodoComponents/Todo.css";
 
-import TodoList from "./TodoComponents/TodoList.js";
-import TodoForm from "./TodoComponents/TodoForm.js";
+import TodoList from "./components/TodoComponents/TodoList.js";
+import TodoForm from "./components/TodoComponents/TodoForm.js";
 
 
 class App extends React.Component {
@@ -12,7 +12,6 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      todos: todos,
     };
   };
 
@@ -47,7 +46,6 @@ class App extends React.Component {
 
   render() {
 
-    if(this.state.todos.length < 1) {
       return (
         <div className="App">
           <div className="header">
@@ -68,6 +66,6 @@ class App extends React.Component {
     }
 
   }
-}
+
 
 export default App;

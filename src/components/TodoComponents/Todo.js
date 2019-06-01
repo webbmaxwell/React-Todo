@@ -7,4 +7,4 @@ const Item = props => {
         </div>;
 };
 
-export default Todo;
+export default Item;

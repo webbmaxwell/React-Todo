@@ -1,6 +1,6 @@
 import React from 'react';
 
-class TodoForm extends React.component {
+class TodoForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -12,7 +12,7 @@ class TodoForm extends React.component {
     this.setState({ [event.target.name]: event.target.value });
   };
 
-  handleSubmit = evnet => {
+  handleSubmit = event => {
     event.preventDefault();
     this.props.addItem(this.state.input);
     this.setState({ input: "" });
