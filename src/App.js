@@ -29,7 +29,7 @@ class App extends React.Component {
       id: Date.now(),
       completed: false
     };
-    this.setState({ groceries: [...this.state.todos, newItem]});
+    this.setState({ todos: [...this.state.todos, newItem]});
   };
 
   toggleItem = id => {
@@ -55,6 +55,18 @@ class App extends React.Component {
 
   render() {
 
+    if(this.state.todos.length < 1) {
+      return (
+        <div className="App">
+          <div className="header">
+            <h1>Todo List: MVP</h1>
+            <h2>Add a Todo!</h2>
+            <TodoForm addItem={this.addItem} />
+          </div>
+        </div>
+      )
+    }
+
       return (
         <div className="App">
           <div className="header">
@@ -71,7 +83,7 @@ class App extends React.Component {
             </button>
           </div>
         </div>
-      );
+      )
     }
 
   }
