@@ -29,8 +29,7 @@ h2 {
 .item {
   width: 45%;
   text-align: left;
-  margin: 4px 0;
-  padding-left: 8px;
+  padding: 0.3rem;
 }
 
 .completed {
@@ -44,6 +43,7 @@ h2 {
 }
 form {
   width: 50%;
+  align-self: flex-start;
 }
 
 
@@ -53,4 +53,5 @@ input::placeholder {
 
 .clear-btn {
   margin-top: 16px;
+  margin-right: 500px;
 }

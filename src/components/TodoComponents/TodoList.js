@@ -11,7 +11,8 @@ const TodoList = props => {
             toggleItem={props.toggleItem}
           />
         )
-      })};
+      })}
+      
     </div>
   )
 };
