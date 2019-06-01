@@ -4,6 +4,13 @@ import "./components/TodoComponents/Todo.css";
 import TodoList from "./components/TodoComponents/TodoList.js";
 import TodoForm from "./components/TodoComponents/TodoForm.js";
 
+const todos = [
+  {
+    name: "Write Todos",
+    id: 123,
+    completed: false
+  },
+];
 
 class App extends React.Component {
   // you will need a place to store your state in this component.
@@ -12,6 +19,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
+      todos: todos
     };
   };
 
@@ -19,26 +27,27 @@ class App extends React.Component {
     let newItem = {
       name: item,
       id: Date.now(),
-      purchased: false
+      completed: false
     };
+    this.setState({ groceries: [...this.state.todos, newItem]});
   };
 
   toggleItem = id => {
     let todos = this.state.todos.slice();
     todos = todos.map(item => {
       if (item.id === id) {
-        item.purchased = !item.purchased;
+        item.completed = !item.completed;
         return item;
-      }
-      else {
+      } else {
         return item;
       };
-    })
+    });
+    this.setState({ todos: todos });
   };
 
   clearComplete = id => {
     const filtered = this.state.todos.filter(item => {
-      return item.purchased === false;
+      return item.completed === false;
     });
 
     this.setState({ todos: filtered })
